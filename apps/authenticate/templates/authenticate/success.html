@@ -1,0 +1,12 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+    <h1>Success! Welcome, {{ request.session.user }}</h1>
+    {% for message in messages %}
+        <p class="text-success">{{ message }}</p>
+    {% endfor %}
+{% endblock %}
+
+{% block footer %}
+    <a href="{% url 'auth:logout' %}" class="btn btn-dark">Logout</a>
+{% endblock %}
